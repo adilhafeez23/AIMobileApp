@@ -9,8 +9,8 @@ import {
   Text,
 } from 'react-native';
 import CardList from './cardList';
-// import CardList from './cardList';
-// import AIModal from './aimodel';
+import AIModal from './aimodel';
+
 
 function Home() {
   const [isChatVisible, setChatVisible] = useState(false);
@@ -59,7 +59,7 @@ function Home() {
         </TouchableOpacity>
 
         <Modal visible={isChatVisible} animationType="slide">
-          {/* <AIModal onClose={() => setChatVisible(false)} /> */}
+          <AIModal onClose={() => setChatVisible(false)} />
         </Modal>
       </View>
     </View>
