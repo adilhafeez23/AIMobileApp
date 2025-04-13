@@ -8,6 +8,7 @@ import {
   ImageBackground,
   Text,
 } from 'react-native';
+import CardList from './cardList';
 // import CardList from './cardList';
 // import AIModal from './aimodel';
 
@@ -43,7 +44,7 @@ function Home() {
   
           {/* CardList component */}
           <View style={{ width: '100%' }}>
-            {/* <CardList /> */}
+            <CardList />
           </View>
 
         <TouchableOpacity
