@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     zIndex: 0,
   },
   container: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 20 },
-  header: { fontSize: 24, fontWeight: 'bold', marginBottom: 20 },
+  header: { fontSize: 24, fontWeight: 'bold', marginBottom: 20, color: 'white' }, 
   input: { width: '100%', height: 50, borderWidth: 1, padding: 10, marginBottom: 10, backgroundColor: 'white' },
   button: { backgroundColor: '#007BFF', padding: 15, borderRadius: 5, alignItems: 'center', marginTop: 10, width: '100%' },
   buttonText: { color: 'white', fontSize: 16, fontWeight: 'bold' },
