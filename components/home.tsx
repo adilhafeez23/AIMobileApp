@@ -10,11 +10,13 @@ import {
 } from 'react-native';
 import CardList from './cardList';
 import AIModal from './aimodel';
+import { useNavigation } from '@react-navigation/native';
+
 
 
 function Home() {
   const [isChatVisible, setChatVisible] = useState(false);
-
+  const navigation = useNavigation();
   return (
     <View style={styles.wrapper}>
       {/* Background image with overlay */}
@@ -34,7 +36,8 @@ function Home() {
             <Text style={styles.welcomeText}>Welcome</Text>
             <Text style={styles.subText}>Ready to start your fitness journey</Text>
           </View>
-          <TouchableOpacity style={styles.accountButton}>
+                {/* @ts-ignore */} 
+          <TouchableOpacity style={styles.accountButton} onPress={() => navigation.navigate('Login')}>
             <Image
               source={require('../assets/user.png')} // replace with your account icon image
               style={styles.accountIcon}
