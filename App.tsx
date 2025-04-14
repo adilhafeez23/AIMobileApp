@@ -7,11 +7,12 @@ import Home from './components/home';
 import ExerciseDetails from './components/exercisedetails';
 import CardDetails from './components/cardDetails';
 const Stack = createStackNavigator();
-
-
+import { Provider } from 'react-redux';
+import store from './store/index';
 
 export default function App() {
   return (
+    <Provider store={store}>
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
         {/* <Stack.Screen name="Landing" component={Landing} /> */}
@@ -24,6 +25,7 @@ export default function App() {
         {/* Add other screens here */}
       </Stack.Navigator>
     </NavigationContainer>
+    </Provider>
   );
 }
 

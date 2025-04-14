@@ -1,9 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator, ImageBackground } from 'react-native';
-
+import { useDispatch } from 'react-redux';
+import { signInSuccess } from '../store/authSlice';
 const Login = ({ navigation }: any) => {
-  
+  const dispatch = useDispatch();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -38,7 +40,7 @@ const Login = ({ navigation }: any) => {
 
       console.log('login response:', response.data);
       setLoading(false);
-
+      dispatch(signInSuccess({ user: response.data.user, token: response.data.token }));
       // Redirect to login or home page
       navigation.replace('Home');
     } catch (error: any) {
