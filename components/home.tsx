@@ -11,12 +11,19 @@ import {
 import CardList from './cardList';
 import AIModal from './aimodel';
 import { useNavigation } from '@react-navigation/native';
+import { useSelector } from 'react-redux';
 
-
+interface RootState {
+  auth: {
+    user: any; // replace 'any' with the actual type of 'user' if known
+  };
+}
 
 function Home() {
   const [isChatVisible, setChatVisible] = useState(false);
   const navigation = useNavigation();
+  const user = useSelector((state: RootState) => state.auth.user);
+  console.log('User:', user);
   return (
     <View style={styles.wrapper}>
       {/* Background image with overlay */}
@@ -33,7 +40,7 @@ function Home() {
         {/* Header with Welcome Text and Account Icon */}
         <View style={styles.header}>
           <View style={styles.welcomeContainer}>
-            <Text style={styles.welcomeText}>Welcome</Text>
+            <Text style={styles.welcomeText}>Welcome {user ? user.username : ''}</Text>
             <Text style={styles.subText}>Ready to start your fitness journey</Text>
           </View>
                 {/* @ts-ignore */} 
