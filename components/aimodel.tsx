@@ -15,7 +15,7 @@ const AIModal = ({ onClose }: any) => {
     { id: '1', text: 'Hi! How can I help you?', sender: 'bot' },
   ]);
   const [input, setInput] = useState('');
-  const API_URL = 'https://3e7b-34-125-187-66.ngrok-free.app/generate/';
+  const API_URL = 'https://93a7-34-90-253-113.ngrok-free.app/generate/';
 
   const typingIntervalRef = useRef<NodeJS.Timeout | null>(null);
 

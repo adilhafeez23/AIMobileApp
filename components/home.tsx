@@ -67,11 +67,31 @@ function Home() {
             resizeMode="contain"
           />
         </TouchableOpacity>
-
+        <View style={styles.badgeFooter}>
+  <View style={styles.badgeContainer}>
+    <View style={styles.badgeItem}>
+      <Image
+        source={require('../assets/Badges/SilverBadge.png')}
+        style={styles.badgeIcon}
+      />
+      <Text style={styles.badgeText}>Badge Earned</Text>
+    </View>
+    <View style={styles.badgeItem}>
+      <Image
+        source={require('../assets/Badges/flame.png')}
+        style={styles.badgeIcon}
+      />
+      <Text style={styles.badgeText}>7-Day Streak</Text>
+    </View>
+  </View>
+      </View>
         <Modal visible={isChatVisible} animationType="slide">
           <AIModal onClose={() => setChatVisible(false)} />
         </Modal>
       </View>
+      
+
+
     </View>
   );
 }
@@ -125,6 +145,7 @@ const styles = StyleSheet.create({
   },
   chatButton: {
     position: 'absolute',
+    zIndex: 10,
     bottom: 30,
     right: 30,
     backgroundColor: '#ffffff',
@@ -137,6 +158,44 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 25,
   },
+
+  
+  badgeFooter: {
+    position: 'absolute',
+    bottom: 100, // places it above the chatButton
+    width: '90%',
+    backgroundColor: '#000000',
+    padding: 12,
+    borderRadius: 12,
+    alignSelf: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+  
+  badgeContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%',
+  },
+  
+  badgeItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  
+  badgeIcon: {
+    width: 35,
+    height: 35,
+    marginRight: 6,
+  },
+  
+  badgeText: {
+    color: '#fff',
+    fontSize: 20,
+    fontWeight: '500',
+  },
+  
+  
 });
 
 export default Home;
